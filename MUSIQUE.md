@@ -32,7 +32,7 @@ where albums.title = 'Let There Be Rock'
 
 Afficher le prix de cet album ainsi que sa durée totale
 
-SELECT sum(invoice_items.unitprice)
+SELECT sum(invoice_items.unitprice), sum(tracks.Milliseconds)/60000
 FROM invoice_items
 INNER JOIN albums ON tracks.AlbumId = albums.AlbumId
 INNER JOIN tracks ON tracks.TrackId = invoice_items.TrackId
